@@ -8,8 +8,9 @@ function App() {
 
   return (
     <>
-      <h1>Blog con react</h1>
+    <div className="layout">
       <Rutas/>
+    </div>
     </>
   )
 }
