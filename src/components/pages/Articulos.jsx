@@ -4,12 +4,6 @@ export const Articulos = () => {
 
   const [articulos, setArticulos] = useState([]);
 
-  useEffect(() => {
-
-   conseguirArticulos()
-
-  }, [])
-  
   const conseguirArticulos = async () =>{
 
     const url = "http://localhost:3900/api/articulos";
@@ -20,8 +14,19 @@ export const Articulos = () => {
     let datos = await peticion.json()
 
     console.log("datos:",datos)
+    if(datos.status === "success"){
+      setArticulos(datos.articulos)
+    }
 
   }
+
+  useEffect(() => {
+
+   conseguirArticulos()
+
+  }, [])
+  
+ 
 
   return (
     <>
