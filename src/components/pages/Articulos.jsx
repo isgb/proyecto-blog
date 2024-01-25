@@ -1,6 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 export const Articulos = () => {
+
+  const [articulos, setArticulos] = useState([]);
+
+  useEffect(() => {
+    
+    let data = [
+      {
+        _id:1,
+        titulo: "Titulo 1",
+        contenido : "Contenido"
+      },
+      {
+        _id:2,
+        titulo: "Titulo 1",
+        contenido : "Contenido"
+      },
+      {
+        _id:3,
+        titulo: "Titulo 1",
+        contenido : "Contenido"
+      },
+    ];
+
+  }, [])
+  
+
   return (
     <>
       <article className="articulo-item">
