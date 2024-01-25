@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Global } from "../../helpers/Global";
 
 export const Articulos = () => {
 
@@ -6,7 +7,7 @@ export const Articulos = () => {
 
   const conseguirArticulos = async () =>{
 
-    const url = "http://localhost:3900/api/articulos";
+    const url = Global.url+"articulos";
     let peticion = await fetch(url, {
       method: "GET"
     });
