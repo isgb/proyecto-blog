@@ -9,8 +9,8 @@ export const Listado = ({articulos, setArticulos}) => {
           <article key={articulo._id} className="articulo-item">
             <div className="mascara">
 
-              {  articulo.imagen && <img src={Global.url + "imagen/" + articulo.imagen} /> }
-              { !articulo.imagen && <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png" />}
+              {  articulo.imagen != "deafult.png" && <img src={Global.url + "imagen/" + articulo.imagen} /> }
+              {  articulo.imagen == "deafult.png" && <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png" />}
 
             </div>
             <div className="datos">
