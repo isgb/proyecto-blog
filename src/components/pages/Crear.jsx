@@ -29,7 +29,13 @@ export const Crear = () => {
 
       const subida = await Peticion(Global.url+"subir-imagen/"+datos.articulo._id,"POST",formData, true);
 
-      console.log(subida)
+      // console.log(subida)
+
+      if(subidas.status === "success"){
+        setResultado("guardado")
+      }else{
+        setResultado("error")
+      }
 
     }else{
       setResultado("error")
