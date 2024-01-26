@@ -17,8 +17,10 @@ export const Crear = () => {
 
     const {datos, cargando} = await Peticion(Global.url+"crear","POST",nuevoArticulo)
 
-    if(datos.status === "success"){
+    if(datos.status === "Success"){
       setResultado("guardado")
+
+      console.log(datos)
 
       const fileInput = document.querySelector("#file");
 
@@ -33,7 +35,7 @@ export const Crear = () => {
       setResultado("error")
     }
 
-    console.log(datos)
+    // console.log(datos)
   }
 
   return (
