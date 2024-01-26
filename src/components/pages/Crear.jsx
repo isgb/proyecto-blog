@@ -18,7 +18,17 @@ export const Crear = () => {
     const {datos, cargando} = await Peticion(Global.url+"crear","POST",nuevoArticulo)
 
     if(datos.status === "success"){
-      setResultado("no_enviado")
+      setResultado("guardado")
+
+      const fileInput = document.querySelector("#file");
+
+      const formData = new FormData();
+      formData.append('file0', fileInput.files[0]);
+
+      const subida = await Peticion(Global.url+"subir-imagen/"+datos.articulo._id,"POST",formData, true);
+
+      console.log(subida)
+
     }else{
       setResultado("error")
     }

@@ -1,5 +1,5 @@
 
-export const Peticion = async (url,metodo, datosGuardar = "") => {
+export const Peticion = async (url,metodo, datosGuardar = "", archivos = false) => {
 
     let cargando = true;
 
@@ -15,9 +15,18 @@ export const Peticion = async (url,metodo, datosGuardar = "") => {
         }
 
         if(metodo == "POST" || metodo == "PUT"){
+
+            let body = "";
+
+            if(archivos){
+                body = datosGuardar;
+            }else{
+                body = JSON.stringify(datosGuardar);
+            }
+
             opciones = {
                 method : metodo,
-                body: JSON.stringify(datosGuardar),
+                body,
                 headers:{
                     "Content-Type":"application/json"
                 }
