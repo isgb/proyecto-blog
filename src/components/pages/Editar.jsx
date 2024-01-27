@@ -77,16 +77,24 @@ export const Editar = () => {
       <form className='formulario' onSubmit={guardarArticulo}>
         <div className='form-group'>
           <label htmlFor='titulo'>Titulo</label>
-          <input type="text" name='titulo' onChange={cambiado}/>
+          <input type="text" name='titulo' onChange={cambiado} value={articulo.titulo}/>
         </div>
 
         <div className='form-group'>
           <label htmlFor='contenido'>Contenido</label>
-          <textarea type="text" name='contenido' onChange={cambiado}/>
+          <textarea type="text" name='contenido' onChange={cambiado} value={articulo.titulo}/>
         </div>
 
         <div className='form-group'>
           <label htmlFor='file0'>Imagen</label>
+          <div className="mascara">
+              {articulo.imagen != "deafult.png" && (
+                <img src={Global.url + "imagen/" + articulo.imagen} />
+              )}
+              {articulo.imagen == "deafult.png" && (
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png" />
+              )}
+            </div>
           <input type="file" name='file0' id='file' onChange={cambiado}/>
         </div>
 
