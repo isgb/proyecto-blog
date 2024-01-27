@@ -20,7 +20,7 @@ body{
       "footer footer footer footer"
   ;
   grid-template-rows: 100px 70px auto 70px;
-  grid-template-columns: 1fr, 1fr, 1fr, 25%;
+  grid-template-columns: 1fr 1fr 1fr 25%;
 }
 
 /*ESTILOS CABECERA*/
